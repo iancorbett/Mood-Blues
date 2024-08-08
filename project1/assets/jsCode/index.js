@@ -18,9 +18,9 @@ const randomize = (event) => {
     
     console.log(random);
 
-    localStorage.setItem('randomPlaylist', random);
+    localStorage.setItem('randomPlaylist', JSON.stringify(random));
 
-    //window.location.href="./playlist.html"
+    window.location.href="./playlist.html"
 }
 
 let playlist1 = ['CountrySong', 'song2', 'song3', 'song4', 'song5'];
