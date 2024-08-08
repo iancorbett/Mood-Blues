@@ -1,6 +1,6 @@
 // create a variable to get selection from local storage and parsing it
 let form = JSON.parse(localStorage.getItem('userMood&Genre'));
-
+let random = JSON.parse(localStorage.getItem('randomPlaylist'));
 
 console.log(form);
 console.log('hello');
