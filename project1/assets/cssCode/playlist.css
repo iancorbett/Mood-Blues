@@ -1,0 +1,19 @@
+#backgroundPlaylist {
+    background: var(--clr-bg);
+}
+
+.upbeatMode {
+    --clr-bg: yellow;
+}
+
+.melancholyMode {
+    --clr-bg: purple;
+}
+
+.happyMode {
+    --clr-bg: orange;
+}
+
+.sadMode {
+    --clr-bg: black;
+}
