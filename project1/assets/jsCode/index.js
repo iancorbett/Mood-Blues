@@ -1,3 +1,4 @@
+// for the submit button
 const submitForm = (event) => {
     event.preventDefault();
     const form = {
@@ -11,6 +12,5 @@ const submitForm = (event) => {
     window.location.href="./playlist.html";
 }
 
-
-
 document.getElementById('enterButton').addEventListener('click', submitForm);
+
