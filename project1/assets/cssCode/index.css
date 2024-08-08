@@ -51,3 +51,15 @@
     cursor: pointer;
     margin-top: 20px;
 }
+
+#randomButton {
+    font-size: 35px;
+    background-color: violet;
+    border: 2px solid gold;
+    border-radius: 4px;
+    color: gold;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    display: flex;
+}
