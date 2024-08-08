@@ -6,6 +6,12 @@ console.log(form);
 console.log('hello');
 console.log(form.Mood);
 
+// for the back button
+function backButton() {
+    window.history.back()
+};
+
+
 
 // get stored data from local storage
 function renderMood() {
@@ -25,6 +31,6 @@ function renderMood() {
     else {
         document.body.classList.toggle('sadMode')
     }
-}
+};
 
 renderMood ();

@@ -17,3 +17,10 @@
 .sadMode {
     --clr-bg: black;
 }
+
+button {
+    font-size: medium;
+    color:pink;
+    border-radius: 10px;
+    padding: 5px;
+}
