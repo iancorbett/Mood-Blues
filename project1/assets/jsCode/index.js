@@ -8,7 +8,7 @@ const submitForm = (event) => {
 
     localStorage.setItem('userMood&Genre', JSON.stringify(form));
 
-    window.location.href="../playlist.html";
+    window.location.href="./playlist.html";
 }
 
 
