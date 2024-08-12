@@ -24,3 +24,10 @@ button {
     border-radius: 10px;
     padding: 5px;
 }
+
+.playlist-cards {
+     border: 3px solid gold;
+     margin-bottom: 8px;
+     padding-left: 5px;
+     color: gold;
+}
