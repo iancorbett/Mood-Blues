@@ -1,3 +1,4 @@
+
 // const playlistContainer = document.getElementById('backgroundPlaylist');
 // //making a container to push song titles into to be displayed on the screen
 
@@ -113,5 +114,6 @@ function displayPlaylist() {
         // here we are adding the card to the container
     }
     console.log(playlist)
+
 }
 displayPlaylist()
