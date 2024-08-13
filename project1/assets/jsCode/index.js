@@ -7,11 +7,14 @@ const submitForm = (event) => {
         Genre: document.getElementById('question2').value
     }
     //creating an object and assigning mood and genre properties to it.
-  console.log(form);
+
+    console.log(form);
 
     localStorage.setItem('userMood&Genre', JSON.stringify(form));
     //storing user input in local storage
-    window.location.href="./playlist.html";
+    window.location.href = "./playlist.html";
+
+
     //directing user to playlist.html page, where they will receive their generated playlist.
 }
 
@@ -25,7 +28,9 @@ const randomize = (event) => {
     localStorage.setItem('randomPlaylist', JSON.stringify(random));
     //storing randomly selected playlist in local storage.
 
-    window.location.href="./playlist.html"
+
+    window.location.href = "./playlist.html"
+
     //directing user to playlist.html page, where they will receive their generated playlist.
 }
 
@@ -49,5 +54,6 @@ document.getElementById('enterButton').addEventListener('click', submitForm);
 //to be retrieved on the next page.
 
 document.getElementById('randomButton').addEventListener('click', randomize);
-//when randomButton is clicked, the randomize function is run, and it will display 
+//when randomButton is clicked, the randomize function is run, and it will display
+
 //a randomly selected, premade playlist from an array of playlists.
