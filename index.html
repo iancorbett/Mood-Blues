@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,60 @@
     <link rel="stylesheet" href="./project1/assets/cssCode/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
+
 <body id="background">
 
-<header id="projectTitle">Mood-Blues</header>
-    
+    <header id="projectTitle">Mood-Blues</header>
+
     <div id="formDiv">
         <form id="userInput">
             <h1 id="h1Text">What Is Your Current Mood?</h1>
             <div>
-            <select id="question1" name="Mood" size="4">
-                <option value="upbeat">Upbeat😊</option>
-                <option value="melancholy">Melancholy🙁</option>
-                <option value="happy">Happy😀</option>
-                <option value="sad">Sad😔</option>
-              </select>
+                <select id="question1" name="Mood" size="4">
+                    <option value="upbeat">Upbeat😊</option>
+                    <option value="melancholy">Melancholy🙁</option>
+                    <option value="happy">Happy😀</option>
+                    <option value="sad">Sad😔</option>
+                </select>
             </div>
             <h1 id="h1Text">What Genre Are You Feeling?</h1>
             <div>
-            <select id="question2" name="Genre" size="4">
-                <option value="pop">Pop</option>
-                <option value="country">Country</option>
-                <option value="rap">Rap</option>
-                <option value="classical">Classical</option>
-            </select>
-        </div>
-              <div>
-              <button id="enterButton">Enter</button>
-              <button id="randomButton">Click Here for the Random Playlist Generator</button>
+                <select id="question2" name="Genre" size="4">
+                    <option value="pop">Pop</option>
+                    <option value="country">Country</option>
+                    <option value="rap">Rap</option>
+                    <option value="classical">Classical</option>
+                </select>
             </div>
+                <button id="enterButton">Enter</button>
+                <button id="randomButton">Click Here for the Random Playlist Generator</button>
         </form>
-</div> 
+        <div>
+            <button class="js-modal-trigger" data-target="modal-js-example">Clear Selection</button>
 
-    <script src="./project1/assets/jsCode/index.js"></script>
+            <div id="modal-js-example" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1>Confirmation</h1>
+                        <p>Are you sure you want to clear your selection</p>
+    
+                        <footer class="modal-card-foot">
+                            <div class="buttons">
+                                <button class="button is-success">Confirm</button>
+                                <button class="button">Cancel</button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+    </div>
+</div>
+
+        <script src="./project1/assets/jsCode/index.js"></script>
+        <script src="./project1/assets/jsCode/modal.js"></script>
 </body>
+
 </html>
