@@ -11,10 +11,10 @@ console.log(form.Mood);
 
 // for the back button
 function backButton() {
-    window.history.back()
+    window.location.href = './index.html'
 };
 
-
+document.getElementById('backButton').addEventListener('click', backButton)
 
 // get stored data from local storage
 function renderMood() {
