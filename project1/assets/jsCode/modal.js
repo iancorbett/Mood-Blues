@@ -40,3 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  //For confirm modal button, clear selection for question 1 & 2
+  function myModalFunction () {
+    document.getElementById("question1").selectedIndex = 0;
+    document.getElementById("question2").selectedIndex = 0;
+  };
+
+  document.getElementById('clear').addEventListener('click', myModalFunction)
