@@ -11,7 +11,7 @@
 
 <body id="background">
 
-    <header id="projectTitle">Mood-Blues</header>
+    <header id="projectTitle" class="title is-1">Mood-Blues</header>
 
     <div id="formDiv">
         <form id="userInput">
@@ -38,10 +38,12 @@
                 </select>
             </div>
         </form>
-            <button id="enterButton">Enter</button>
-            <button id="randomButton">Click Here for the Random Playlist Generator</button>
+
+            <button id="enterButton" class="enterButton button is-info is-dark button is-focused button button is-rounded">Enter</button>
+            <button id="randomButton" class="randomButton button is-success button is-primary is-inverted button is-focused button is-medium is-responsive">Click Here for the Random Playlist Generator</button>
+        
         <div>
-            <button class="js-modal-trigger" data-target="modal-js-example">Clear Selection</button>
+            <button class="js-modal-trigger button is-ghost clearButton" data-target="modal-js-example">Clear Selection</button>
 
 
             <div id="modal-js-example" class="modal">

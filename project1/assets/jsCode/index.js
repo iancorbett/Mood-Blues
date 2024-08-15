@@ -189,4 +189,31 @@ async function randomPlaylist() {
     } else {
         alert('Failed to generate playlist.');
     }
+
 };
+
+function displayPlaylist() {
+    window.location.replace(playlistUrl);
+}
+
+// API for getting event detail 
+const url = 'https://ticketmasterstefan-skliarovv1.p.rapidapi.com/getSingleEvent';
+const data = new FormData();
+
+const options = {
+	method: 'POST',
+	headers: {
+		'x-rapidapi-key': '1467dc237dmshb2a40b1132dcfdep18c98cjsn2f712875652d',
+		'x-rapidapi-host': 'Ticketmasterstefan-skliarovV1.p.rapidapi.com'
+	},
+	body: data
+};
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+
