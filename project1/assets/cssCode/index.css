@@ -62,3 +62,11 @@
 #clearButton{
     margin-top: 20px;
 }
+
+#quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: monospace;
+}
