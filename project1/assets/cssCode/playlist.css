@@ -7,6 +7,7 @@
     font-size: 38px;
     text-decoration: underline;
     color: var(--clr-title);
+    margin-left: 33%;
 }
 
 .upbeatMode {
@@ -41,16 +42,23 @@
     --card-border: rgb(51, 247, 7);
 }
 
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 button {
     font-size: medium;
     color:pink;
     border-radius: 10px;
     padding: 5px;
-    margin-bottom: 6%;
+    margin-left: 20px;
+    box-shadow: 3px 2px 2px #888888;
 }
 
 .playlist-cards {
-      border: 3px solid var(--card-border);
+    border: 3px solid var(--card-border);
      margin-bottom: 8px;
      padding-left: 5px;
      color: var(--clr-card);
