@@ -20,6 +20,7 @@
     background: conic-gradient(rgb(31, 26, 16), rgb(29, 17, 3), 
     rgb(11, 148, 11), rgb(29, 17, 3), rgb(31, 26, 16));
     color: gold;
+    margin: 20px 15%;
     padding: 20px;
     border-radius: 20px;   
     flex-direction: column;
