@@ -71,6 +71,31 @@ displayPlaylist()
 
 
 
+let form = JSON.parse(localStorage.getItem('userMood&Genre'));
+let random = JSON.parse(localStorage.getItem('randomPlaylist'));
+
+// get stored data from local storage
+function renderMood() {
+    // if mood is upbeat
+    if (form.Mood === 'upbeat') {
+        document.body.classList.toggle('upbeatMode')
+    }
+    // if mood is melancholy
+    else if (form.Mood === 'melancholy') {
+        document.body.classList.toggle('melancholyMode')
+    }
+    // if mood is happy
+    else if (form.Mood === 'happy') {
+        document.body.classList.toggle('happyMode')
+    }
+    // if mood is sad
+    else {
+        document.body.classList.toggle('sadMode')
+    }
+};
+
+renderMood();
+
 // Ticketmaster API for getting event detail 
 const fetchEvent = async event => {
     try {
@@ -102,5 +127,6 @@ const fetchEvent = async event => {
 // Ticketmaster function
 // 502 error, API is down, need to register on ticketmaster not rapidapi
 //document.addEventListener('DOMContentLoaded', () => fetchEvent())
+
 
 
