@@ -14,17 +14,27 @@
 }
 
 #formDiv {
-    text-align: center;  
-}
-
-#userInput {
+    display: flex;
+    text-align: center; 
     border: 4px solid gold;
-    display: inline-block;
     background: conic-gradient(rgb(31, 26, 16), rgb(29, 17, 3), 
     rgb(11, 148, 11), rgb(29, 17, 3), rgb(31, 26, 16));
     color: gold;
     padding: 20px;
-    border-radius: 20px;    
+    border-radius: 20px;   
+    flex-direction: column;
+    align-items: center; 
+}
+
+#userInput {
+    border: 4px solid gold;
+    display: flex;
+    background: conic-gradient(rgb(31, 26, 16), rgb(29, 17, 3), 
+    rgb(11, 148, 11), rgb(29, 17, 3), rgb(31, 26, 16));
+    color: gold;
+    padding: 20px;
+    border-radius: 20px;   
+    flex-direction: column;
 }
 
 #question1 {
@@ -41,25 +51,22 @@
     background-color: rgb(238, 181, 238);
 }
 
-#enterButton {
-    font-size: 20px;
-    background-color: violet;
-    border: 2px solid gold;
-    border-radius: 4px;
-    color: black;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
+#enterButton{
+    margin-top: 20px
 }
 
 #randomButton {
-    font-size: 35px;
-    background-color: violet;
-    border: 2px solid gold;
-    border-radius: 4px;
-    color: gold;
-    font-weight: 600;
-    cursor: pointer;
     margin-top: 20px;
+}
+
+#clearButton{
+    margin-top: 20px;
+}
+
+#quote {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: monospace;
 }

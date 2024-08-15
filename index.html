@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,73 @@
     <link rel="stylesheet" href="./project1/assets/cssCode/index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
+
 <body id="background">
 
-<header id="projectTitle">Mood-Blues</header>
-    
+    <header id="projectTitle" class="title is-1">Mood-Blues</header>
+
     <div id="formDiv">
         <form id="userInput">
             <h1 id="h1Text">What Is Your Current Mood?</h1>
             <div>
-            <select id="question1" name="Mood" size="4">
-                <option value="upbeat">Upbeat😊</option>
-                <option value="melancholy">Melancholy🙁</option>
-                <option value="happy">Happy😀</option>
-                <option value="sad">Sad😔</option>
-              </select>
+                <select id="question1" name="Mood" size="4">
+                    <option value="upbeat">Upbeat😊</option>
+                    <option value="melancholy">Melancholy🙁</option>
+                    <option value="happy">Happy😀</option>
+                    <option value="sad">Sad😔</option>
+                    <option value="imaginative">Imaginative</option>
+                    <option value="romantic">Romantic</option>
+                </select>
             </div>
             <h1 id="h1Text">What Genre Are You Feeling?</h1>
             <div>
-            <select id="question2" name="Genre" size="4">
-                <option value="pop">Pop</option>
-                <option value="country">Country</option>
-                <option value="rap">Rap</option>
-                <option value="classical">Classical</option>
-            </select>
-        </div>
-              <div>
-              <button id="enterButton">Enter</button>
-              <button id="randomButton">Click Here for the Random Playlist Generator</button>
+                <select id="question2" name="Genre" size="4">
+                    <option value="pop">Pop</option>
+                    <option value="country">Country</option>
+                    <option value="rap">Rap</option>
+                    <option value="classical">Classical</option>
+                    <option value="rnb">R&B</option>
+                    <option value="metal">Metal</option>
+                </select>
             </div>
         </form>
-</div> 
 
-    <script src="./project1/assets/jsCode/index.js"></script>
+            <button id="enterButton" class="enterButton button is-info is-dark button is-focused button button is-rounded">Enter</button>
+            <button id="randomButton" class="randomButton button is-success button is-primary is-inverted button is-focused button is-medium is-responsive">Click Here for the Random Playlist Generator</button>
+        
+        <div>
+            <button class="js-modal-trigger button is-ghost clearButton" data-target="modal-js-example">Clear Selection</button>
+
+
+            <div id="modal-js-example" class="modal">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="box">
+                        <h1>Confirmation</h1>
+
+
+                        <p>Are you sure you want to clear your selection?</p>
+
+    
+                        <footer class="modal-card-foot">
+                            <div class="buttons">
+                                <button class="button is-success" id="clear">Confirm</button>
+                                <button class="button">Cancel</button>
+                            </div>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="quote">
+        <h3 id="quote-text"></h3>
+        <h2 id="quote-author"></h2>
+    </div>
+</div>
+
+        <script src="./project1/assets/jsCode/index.js"></script>
+        <script src="./project1/assets/jsCode/modal.js"></script>
 </body>
+
 </html>
