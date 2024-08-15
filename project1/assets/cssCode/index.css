@@ -73,3 +73,11 @@
     margin-top: 20px;
     display: flex;
 }
+
+#quote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: monospace;
+}
