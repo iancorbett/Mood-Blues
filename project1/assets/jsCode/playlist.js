@@ -66,3 +66,41 @@ function displayPlaylist() {
 }
 // invokes the displayPlaylist function as soon on page load
 displayPlaylist()
+
+
+
+
+
+// Ticketmaster API for getting event detail 
+const fetchEvent = async event => {
+    try {
+        console.log(82)
+        const eventUrl = 'https://ticketmasterstefan-skliarovv1.p.rapidapi.com/getSingleEvent';
+        const eventData = {
+            eventId: 'Z7r9jZ1A7uS8Y'
+        }
+
+        const eventOptions = {
+            method: 'POST',
+            headers: {
+                'x-rapidapi-key': '1467dc237dmshb2a40b1132dcfdep18c98cjsn2f712875652d',
+                'x-rapidapi-host': 'Ticketmasterstefan-skliarovV1.p.rapidapi.com'
+            },
+            body: eventData
+        };
+
+        const event = document.getElementById('eventDetails');
+        event.setAttribute('style', 'font-size:35px; color:red')
+        const response = await fetch(eventUrl, eventOptions);
+        const data = await response.json();
+        console.log(data)
+    } catch (error) {
+        console.log("error", error)
+    }
+};
+
+// Ticketmaster function
+// 502 error, API is down, need to register on ticketmaster not rapidapi
+//document.addEventListener('DOMContentLoaded', () => fetchEvent())
+
+
