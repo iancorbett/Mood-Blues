@@ -273,4 +273,4 @@ function eventFetch() {
 
 }
 
-document.addEventListener('DOMContentLoaded', eventFetch())
+document.addEventListener('DOMContentLoaded', () => eventFetch())

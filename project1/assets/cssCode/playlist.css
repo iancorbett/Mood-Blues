@@ -64,6 +64,7 @@ button {
      margin-bottom: 3%;
      font-size: 18px;
      background: var(--card-bg);
+     margin: 0;
 }
 
 #back-button {

@@ -1,7 +1,7 @@
 #background {
     background: linear-gradient(rgb(227, 89, 89),rgb(232, 173, 214), rgb(169, 99, 157));
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 140vh;
 }
 
 #projectTitle {
@@ -71,4 +71,20 @@
     align-items: center;
     flex-direction: column;
     font-family: monospace;
+}
+
+#event {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    font-family: monospace;
+}
+
+#event-header {
+    text-align: center;
+    font-size: 50px;
+    border: 5px solid black;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 0;
 }
