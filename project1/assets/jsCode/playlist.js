@@ -96,7 +96,7 @@ function renderMood() {
 
 renderMood();
 
-// Ticketmaster API for getting event detail 
+// Ticketmaster API for getting event detail
 const fetchEvent = async event => {
     try {
         console.log(82)
