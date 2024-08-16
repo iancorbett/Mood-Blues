@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
+    // Obtained the following lines of code 4-43 from Bulma for the modal feature
     function openModal($el) {
       $el.classList.add('is-active');
     }
