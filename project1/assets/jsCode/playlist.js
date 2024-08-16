@@ -71,7 +71,6 @@ displayPlaylist()
 
 
 
-
 let form = JSON.parse(localStorage.getItem('userMood&Genre'));
 let random = JSON.parse(localStorage.getItem('randomPlaylist'));
 
@@ -97,62 +96,37 @@ function renderMood() {
 
 renderMood();
 
+// Ticketmaster API for getting event detail
+const fetchEvent = async event => {
+    try {
+        console.log(82)
+        const eventUrl = 'https://ticketmasterstefan-skliarovv1.p.rapidapi.com/getSingleEvent';
+        const eventData = {
+            eventId: 'Z7r9jZ1A7uS8Y'
+        }
+
+        const eventOptions = {
+            method: 'POST',
+            headers: {
+                'x-rapidapi-key': '1467dc237dmshb2a40b1132dcfdep18c98cjsn2f712875652d',
+                'x-rapidapi-host': 'Ticketmasterstefan-skliarovV1.p.rapidapi.com'
+            },
+            body: eventData
+        };
+
+        const event = document.getElementById('eventDetails');
+        event.setAttribute('style', 'font-size:35px; color:red')
+        const response = await fetch(eventUrl, eventOptions);
+        const data = await response.json();
+        console.log(data)
+    } catch (error) {
+        console.log("error", error)
+    }
+};
+
+// Ticketmaster function
+// 502 error, API is down, need to register on ticketmaster not rapidapi
+//document.addEventListener('DOMContentLoaded', () => fetchEvent())
 
 
 
-// api key and url
-const apiKey = 'PWCDGxIFLzAbip6hW03JocGA2Qcghja1';
-const eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json';
-// targeting the c
-const eventContainer = document.getElementById('event')
-
-// Parameters for the api call
-const params = new URLSearchParams({
-    apikey: apiKey,
-    keyword: 'music',
-    city: 'New York',
-});
-
-function eventFetch() {
-    fetch(`${eventUrl}?${params}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data._embedded.events);
-            console.log(data._embedded.events[0].name);
-
-            for (i = 0; i < 5; i++) {
-                const eventCard = document.createElement('div');
-                const imgUrl = document.createElement('a')
-                const eventImg = document.createElement('img');
-                const eventName = document.createElement('h3');
-                //     // const eventImg = document.createElement('')
-
-                eventCard.setAttribute('style', 'text-align:center')
-                eventImg.setAttribute('style', 'width:300px; height:200px')
-                eventName.setAttribute('style', 'font-size:10px; color:black; font:monospace')
-
-
-                eventImg.src = data._embedded.events[i].images[i].url;
-                eventName.textContent = data._embedded.events[i].name;
-                imgUrl.href = data._embedded.events[i].url
-
-                imgUrl.appendChild(eventImg)
-                eventCard.appendChild(imgUrl);
-                eventCard.appendChild(eventName);
-                eventContainer.appendChild(eventCard)
-            }
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-
-
-
-}
-
-document.addEventListener('DOMContentLoaded', eventFetch())
