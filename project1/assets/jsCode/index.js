@@ -7,6 +7,8 @@ const submitForm = (event) => {
         Genre: document.getElementById('question2').value
     }
     console.log(form);
+    localStorage.setItem('userMood&Genre', JSON.stringify(form));
+    //storing user input in local storage
     window.location.href = "./playlist.html";
 }
 document.getElementById('enterButton').addEventListener('click', submitForm);
