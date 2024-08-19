@@ -7,26 +7,29 @@ const submitForm = (event) => {
         Genre: document.getElementById('question2').value
     }
     console.log(form);
+    localStorage.setItem('userMood&Genre', JSON.stringify(form));
     window.location.href = "./playlist.html";
 }
 document.getElementById('enterButton').addEventListener('click', submitForm);
 
+
+// PARTS OF THIS CODE COMES FROM RAPIDAPI CODE SNIPPETS
 // THIS PART OF THE CODE HANDLES THE QUOTE RENDITION AS WEBSITE LOADS
 // the api url and options passed into fetch request 
-const quoteUrl = 'https://random-quote-api3.p.rapidapi.com/';
-const quoteOptions = {
-    method: 'GET',
-    headers: {
-        'x-rapidapi-key': '5e80f44021msh556114d38a07a29p14bf05jsn502a39436a33',
-        'x-rapidapi-host': 'random-quote-api3.p.rapidapi.com'
-    }
-};
-
 // added event listener with event handler function to display the random quote on load
 document.addEventListener('DOMContentLoaded', () => {
     // targets the placeholder for the quote and author
     const quoteText = document.getElementById('quote-text');
     const quoteAuthor = document.getElementById('quote-author');
+
+    const quoteUrl = 'https://random-quote-api3.p.rapidapi.com/';
+    const quoteOptions = {
+        method: 'GET',
+        headers: {
+            'x-rapidapi-key': '2e5fa21c17msh132fd03362bfc73p195ab6jsned0fabdd16ca',
+            'x-rapidapi-host': 'random-quote-api3.p.rapidapi.com'
+        }
+    };
 
     // adds styling to quote
     quoteText.setAttribute('style', 'font-size:35px; color:red')
@@ -49,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-// THIS ENTIRE SECTION OF CODE IS FOR THE SPOTIFY API
+
 // targeting the required elements/components for the buttons and forms
 const moodSelect = document.querySelector('#question1');
 const genreSelect = document.querySelector('#question2');
@@ -61,6 +64,7 @@ const playlistUrl = './playlist.html';
 moodSelect.addEventListener('change', moodPlaylist);
 genreSelect.addEventListener('change', genrePlaylist);
 randomButton.addEventListener('click', randomPlaylist);
+
 
 // stores the url and options when fecthing from the spotify api
 const clientId = '88a4a2b546c64d72af46789cd47c436f';
@@ -88,6 +92,7 @@ const genrePlaylists = {
 }
 
 // object containing various playlists, with the keys being numbers for the random number generator 
+// 
 const randomPlaylists = {
     1: '37i9dQZF1DWUb0uBnlJuTi', // Jazz-Funk
     2: '37i9dQZF1DX2UgsUIg75Vg', // Chilled R&B
@@ -101,6 +106,8 @@ const randomPlaylists = {
     10: '37i9dQZF1DX6VdMW310YC7', // Chill Tracks
 }
 
+// THIS CODE STRUCTURE COMES FROM THE SPOTIFY API DOCUMENTATION
+// This code structure came from the spotify api documentation 
 // function to request a token for spotify api access
 async function fetchToken() {
     // api fetch request with the 
@@ -192,9 +199,9 @@ async function randomPlaylist() {
 
 };
 
-function displayPlaylist() {
-    window.location.replace(playlistUrl);
-}
+// function displayPlaylist() {
+//     window.location.replace(playlistUrl);
+// }
 
 // // API for getting event detail
 // const url = 'https://ticketmasterstefan-skliarovv1.p.rapidapi.com/getSingleEvent';
@@ -218,59 +225,45 @@ function displayPlaylist() {
 // }
 
 
-
-function eventFetch() {
+// THIS CODE STRUCTURE COMES FROM TICKETMASTER API DOCUMENTATION
+async function fetchEvent() {
     // api key and url
     const apiKey = 'PWCDGxIFLzAbip6hW03JocGA2Qcghja1';
     const eventUrl = 'https://app.ticketmaster.com/discovery/v2/events.json';
-    // targeting the c
-    const eventContainer = document.getElementById('event')
 
-    // Parameters for the api call
+    // the parameters to be passed in as an argument for the fetch request
     const params = new URLSearchParams({
         apikey: apiKey,
         keyword: 'music',
         city: 'New York',
-    });
-    fetch(`${eventUrl}?${params}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok ' + response.statusText);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log(data._embedded.events);
-            console.log(data._embedded.events[0].name);
+    })
+    // targeting the container on html file
+    const eventContainer = document.getElementById('event')
+    // api fetch request with the url and parameters
+    const response = await fetch(`${eventUrl}?${params}`);
+    const data = await response.json();
+    // console.log(data)
+    // return data.access_token;
+    for (i = 0; i < 5; i++) {
+        const eventCard = document.createElement('div');
+        const imgUrl = document.createElement('a')
+        const eventImg = document.createElement('img');
+        const eventName = document.createElement('h3');
+        //     // const eventImg = document.createElement('')
 
-            for (i = 0; i < 5; i++) {
-                const eventCard = document.createElement('div');
-                const imgUrl = document.createElement('a')
-                const eventImg = document.createElement('img');
-                const eventName = document.createElement('h3');
-                //     // const eventImg = document.createElement('')
-
-                eventCard.setAttribute('style', 'text-align:center')
-                eventImg.setAttribute('style', 'width:300px; height:200px')
-                eventName.setAttribute('style', 'font-size:10px; color:black; font:monospace')
+        eventCard.setAttribute('style', 'text-align:center')
+        eventImg.setAttribute('style', 'width:300px; height:200px')
+        eventName.setAttribute('style', 'font-size:10px; color:black; font:monospace')
 
 
-                eventImg.src = data._embedded.events[i].images[i].url;
-                eventName.textContent = data._embedded.events[i].name;
-                imgUrl.href = data._embedded.events[i].url
+        eventImg.src = data._embedded.events[i].images[i].url;
+        eventName.textContent = data._embedded.events[i].name;
+        imgUrl.href = data._embedded.events[i].url
 
-                imgUrl.appendChild(eventImg)
-                eventCard.appendChild(imgUrl);
-                eventCard.appendChild(eventName);
-                eventContainer.appendChild(eventCard)
-            }
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-
-
-
+        imgUrl.appendChild(eventImg)
+        eventCard.appendChild(imgUrl);
+        eventCard.appendChild(eventName);
+        eventContainer.appendChild(eventCard)
+    }
 }
-
-document.addEventListener('DOMContentLoaded', () => eventFetch())
+document.addEventListener('DOMContentLoaded', () => fetchEvent())
